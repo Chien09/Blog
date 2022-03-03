@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+<h1>Home</h1>
+<p><%=homeContent%></p>
+
+<% postArray.forEach(function(element){ %>
+    <h2><%=element.title%></h2>
+    <!--Truncate content-->
+    <p>
+        <%=element.content.substring(0, 100) + "..."%>
+        <a href="/posts/<%=element._id%>">Read More</a>
+    </p>
+<% }); %>
+
+<%- include('partials/footer') %>
